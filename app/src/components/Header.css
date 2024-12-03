@@ -1,20 +1,19 @@
-/* header.css */
-
+/* Estilo principal do header */
 #header-component {
-    background-color: #ff6f00; /* Fundo laranja vibrante */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #007bff; /* Azul de destaque */
+    color: #fff;
     padding: 1rem 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 1.5rem;
 }
 
-#header-component h2 {
-    color: #fff; /* Texto branco para contraste */
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0;
+iframe
+{
+    display: none;
 }
 
-#header-component .header-container {
+/* Container do header */
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,9 +22,23 @@
     padding: 0 1rem;
 }
 
-#header-component .header-button {
-    background-color: #ffffff; /* Botão branco */
-    color: #ff6f00; /* Texto laranja */
+/* Saudação do usuário */
+#header-user-greeting {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Grupo de botões no header */
+.header-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Botão principal */
+.header-button {
+    background-color: #0056b3; /* Azul escuro */
+    color: #fff;
     border: none;
     border-radius: 0.25rem;
     padding: 0.5rem 1rem;
@@ -34,10 +47,29 @@
     transition: background-color 0.3s ease;
 }
 
-#header-component .header-button:hover {
-    background-color: #f0f0f0; /* Fundo claro ao passar o mouse */
+/* Botão principal ao passar o mouse */
+.header-button:hover {
+    background-color: #004085; /* Azul ainda mais escuro */
 }
 
-#header-component .header-button:active {
-    background-color: #e0e0e0; /* Fundo ainda mais claro ao clicar */
+/* Botão de logoff */
+.header-logoff-button {
+    background-color: #dc3545; /* Vermelho para logoff */
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Botão de logoff ao passar o mouse */
+.header-logoff-button:hover {
+    background-color: #bd2130; /* Vermelho mais escuro */
+}
+
+/* Botão de logoff ao clicar */
+.header-logoff-button:active {
+    background-color: #a71d2a; /* Vermelho ainda mais escuro */
 }

@@ -1,0 +1,73 @@
+/* Estilo para o contêiner principal do dashboard */
+#dashboard-student-page {
+    background-color: #f8f9fa; /* Fundo claro */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Título do dashboard */
+#dashboard-student-title {
+    color: #343a40; /* Texto escuro */
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+/* Lista de jogos */
+#dashboard-student-games-list {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Título da seção de jogos */
+#dashboard-student-games-title {
+    color: #007bff; /* Azul destaque */
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Estilo para cada item da lista de jogos */
+.student-game-item {
+    padding: 1rem;
+    border: 1px solid #dee2e6; /* Borda cinza clara */
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    background-color: #fdfdfd; /* Fundo quase branco */
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito hover no item da lista */
+.student-game-item:hover {
+    background-color: #f1f3f5; /* Fundo mais claro */
+}
+
+/* Informações do jogo */
+.student-game-item strong {
+    color: #495057; /* Texto com boa visibilidade */
+    font-weight: 600;
+}
+
+/* Botão para iniciar jogo */
+.student-game-item .btn-primary {
+    background-color: #007bff; /* Azul padrão */
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover do botão para iniciar jogo */
+.student-game-item .btn-primary:hover {
+    background-color: #0056b3; /* Azul mais escuro */
+}
+
+/* Botão de iniciar jogo ativo */
+.student-game-item .btn-primary:active {
+    background-color: #004085; /* Azul ainda mais escuro */
+}

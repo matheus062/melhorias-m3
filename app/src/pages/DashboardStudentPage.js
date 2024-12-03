@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './DashboardStudentPage.css';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -39,16 +40,21 @@ const DashboardStudentPage = () => {
     };
 
     return (
-        <div className="container mt-5">
-            <h1>Dashboard do Aluno</h1>
-            <div className="list-group mt-4">
-                <h3>Jogos Disponíveis</h3>
+        <div id="dashboard-student-page" className="container mt-5">
+            <h1 id="dashboard-student-title">Dashboard do Aluno</h1>
+            <div id="dashboard-student-games-list" className="list-group mt-4">
+                <h3 id="dashboard-student-games-title">Jogos Disponíveis</h3>
                 {games.map((game) => (
-                    <div key={game.id} className="d-flex justify-content-between align-items-center">
-                        <div className="flex-grow-1">
+                    <div
+                        key={game.id}
+                        id={`student-game-item-${game.id}`}
+                        className="student-game-item d-flex justify-content-between align-items-center"
+                    >
+                        <div id={`student-game-info-${game.id}`} className="flex-grow-1">
                             <strong>{game.name}</strong> - {translateLevel(game.level)}
                         </div>
                         <button
+                            id={`student-game-start-${game.id}`}
                             className="btn btn-primary btn-sm me-2"
                             onClick={() => navigate(`/quiz/${game.id}`)}
                         >

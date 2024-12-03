@@ -121,7 +121,7 @@ const DashboardPage = () => {
                 Cadastro de Alunos
             </button>
             <div id="games-list" className="list-group mt-4">
-                <h3>Jogos Disponíveis</h3>
+                <h3>Jogos Criados</h3>
                 {games.map((game) => (
                     <div
                         key={game.id}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Header.css'; // Importando o CSS
+import './Header.css';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -16,13 +16,23 @@ const Header = () => {
         }
     };
 
+    const handleLogoff = () => {
+        localStorage.clear();
+        navigate('/');
+    };
+
     return (
         <header id="header-component">
             <div className="header-container">
-                <h2>Bem-vindo, {userName || 'Usuário'}</h2>
-                <button className="header-button" onClick={handleGoToDashboard}>
-                    Voltar ao Dashboard
-                </button>
+                <h2 id="header-user-greeting">Bem-vindo, {userName || 'Usuário'}</h2>
+                <div className="header-buttons">
+                    <button className="header-button" onClick={handleGoToDashboard}>
+                        Voltar ao Dashboard
+                    </button>
+                    <button className="header-logoff-button" onClick={handleLogoff}>
+                        Logoff
+                    </button>
+                </div>
             </div>
         </header>
     );
