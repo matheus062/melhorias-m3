@@ -23,19 +23,19 @@ app.use(express.json());
 app.use(cors());
 
 // Sincroniza o banco de dados e inicia o servidor
-sequelize.sync({force: false}) // Use `force: true` somente para desenvolvimento inicial
+sequelize.sync({force: false})
     .then(async () => {
         console.log('Tabelas criadas ou atualizadas com sucesso.');
 
-        // const hashedPassword = await hash('professor123', 10); // Hash para a senha
-        // await User.create({
-        //     email: 'alcemar@univali.br',
-        //     name: 'Professor Alcemar',
-        //     password: hashedPassword,
-        //     role: 'teacher', // Define o papel do usuário
-        // });
-        //
-        // console.log('Usuário professor criado: alcemar@univali.br | Senha: professor123');
+        const hashedPassword = await hash('professor123', 10); // Hash para a senha
+        await User.create({
+            email: 'alcemar@univali.br',
+            name: 'Professor Alcemar',
+            password: hashedPassword,
+            role: 'teacher', // Define o papel do usuário
+        });
+
+        console.log('Usuário professor criado: alcemar@univali.br | Senha: professor123');
 
         app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
     })
