@@ -42,7 +42,7 @@ const CreateGamePage = () => {
                     .filter((q) => q.level === level)
                     .map((q) => q.id)
                     .sort(() => 0.5 - Math.random()) // Embaralha as perguntas
-                    .slice(0, 10) // Seleciona as primeiras 10 perguntas
+                    .slice(0, 4) // Seleciona as primeiras 10 perguntas
                 : selectedQuestions;
 
             if (questionIds.length === 0) {

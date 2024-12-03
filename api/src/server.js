@@ -34,8 +34,8 @@ sequelize.sync({force: false}) // Use `force: true` somente para desenvolvimento
         //     password: hashedPassword,
         //     role: 'teacher', // Define o papel do usuário
         // });
-
-        console.log('Usuário professor criado: alcemar@univali.br | Senha: professor123');
+        //
+        // console.log('Usuário professor criado: alcemar@univali.br | Senha: professor123');
 
         app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
     })
