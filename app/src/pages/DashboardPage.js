@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import './DashboardPage.css'; // Importando o CSS
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -15,7 +16,7 @@ const DashboardPage = () => {
             const token = localStorage.getItem('token');
             try {
                 const response = await axios.get(`${API_URL}/api/games`, {
-                    headers: {Authorization: `Bearer ${token}`},
+                    headers: { Authorization: `Bearer ${token}` },
                 });
                 setGames(response.data);
             } catch (error) {
@@ -56,7 +57,6 @@ const DashboardPage = () => {
         fetchDetailedQuestions(game.questions); // Busca detalhes das perguntas
     };
 
-
     const handleCreateGame = () => {
         navigate('/create-game'); // Navega para a página de criação de jogo
     };
@@ -90,24 +90,44 @@ const DashboardPage = () => {
     // todo: fazer dashboard dos alunos
 
     return (
-        <div className="container mt-5">
+        <div id="dashboard-page" className="container mt-5">
             <h1>Dashboard do Professor</h1>
-            <button className="btn btn-primary mb-3" onClick={handlePerformance}>
+            <button
+                id="performance-btn"
+                className="btn btn-performance mb-3"
+                onClick={handlePerformance}
+            >
                 Desempenho dos Alunos
             </button>
-            <button className="btn btn-info mb-3" onClick={handleManageQuestions}>
+            <button
+                id="manage-questions-btn"
+                className="btn btn-manage-questions mb-3"
+                onClick={handleManageQuestions}
+            >
                 Cadastro de Perguntas e Respostas
             </button>
-            <button className="btn btn-success mb-3" onClick={handleCreateGame}>
+            <button
+                id="create-game-btn"
+                className="btn btn-create-game mb-3"
+                onClick={handleCreateGame}
+            >
                 Cadastro de Jogos
             </button>
-            <button className="btn btn-warning mb-3" onClick={handleRegisterStudents}>
+            <button
+                id="register-students-btn"
+                className="btn btn-register-students mb-3"
+                onClick={handleRegisterStudents}
+            >
                 Cadastro de Alunos
             </button>
-            <div className="list-group mt-4">
+            <div id="games-list" className="list-group mt-4">
                 <h3>Jogos Disponíveis</h3>
                 {games.map((game) => (
-                    <div key={game.id} className="d-flex justify-content-between align-items-center">
+                    <div
+                        key={game.id}
+                        id={`game-item-${game.id}`}
+                        className="game-item d-flex justify-content-between align-items-center"
+                    >
                         <a
                             href={`/quiz/${game.id}`}
                             className="list-group-item list-group-item-action flex-grow-1 me-3"
@@ -124,30 +144,47 @@ const DashboardPage = () => {
                 ))}
             </div>
             {selectedGame && (
-                <div className="modal d-block" style={{backgroundColor: 'rgba(0, 0, 0, 0.5)'}}>
+                <div
+                    id="game-details-modal"
+                    className="modal d-block"
+                    style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+                >
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">
                                 <h5 className="modal-title">Detalhes do Jogo</h5>
-                                <button type="button" className="btn-close" onClick={closeModal}></button>
+                                <button
+                                    type="button"
+                                    className="btn-close"
+                                    onClick={closeModal}
+                                ></button>
                             </div>
                             <div className="modal-body">
-                                <p><strong>Nome do Jogo:</strong> {selectedGame.name}</p>
-                                <p><strong>Nível de Dificuldade:</strong> {translateLevel(selectedGame.level)}</p>
+                                <p>
+                                    <strong>Nome do Jogo:</strong> {selectedGame.name}
+                                </p>
+                                <p>
+                                    <strong>Nível de Dificuldade:</strong>{' '}
+                                    {translateLevel(selectedGame.level)}
+                                </p>
                                 <p><strong>Perguntas:</strong></p>
                                 <ul>
                                     {detailedQuestions.map((question, index) => (
-                                        <li key={index}>
+                                        <li key={index} className="question-item">
                                             <strong>Pergunta:</strong> {question.text}
                                             <ul>
                                                 {question.options.map((option, i) => (
                                                     <li
                                                         key={i}
                                                         className={
-                                                            i === question.correctOption ? 'text-success' : ''
+                                                            i === question.correctOption
+                                                                ? 'text-success'
+                                                                : ''
                                                         }
                                                     >
-                                                        {i === question.correctOption && <strong>✔ </strong>}
+                                                        {i === question.correctOption && (
+                                                            <strong>✔ </strong>
+                                                        )}
                                                         {option}
                                                     </li>
                                                 ))}
@@ -157,7 +194,10 @@ const DashboardPage = () => {
                                 </ul>
                             </div>
                             <div className="modal-footer">
-                                <button className="btn btn-secondary" onClick={closeModal}>
+                                <button
+                                    className="btn btn-secondary"
+                                    onClick={closeModal}
+                                >
                                     Fechar
                                 </button>
                             </div>

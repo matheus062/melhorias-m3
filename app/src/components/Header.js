@@ -1,25 +1,26 @@
 import React from 'react';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import './Header.css'; // Importando o CSS
 
 const Header = () => {
     const navigate = useNavigate();
-    const userName = localStorage.getItem('userName'); // Supondo que o nome do usuário está salvo no localStorage
+    const userName = localStorage.getItem('userName');
 
     const handleGoToDashboard = () => {
-        const role = localStorage.getItem('userRole'); // Supondo que o nome do usuário está salvo no localStorage
+        const role = localStorage.getItem('userRole');
 
         if (role === 'teacher') {
-            navigate('/dashboard'); // Navega para o Dashboard
+            navigate('/dashboard');
         } else {
-            navigate('/dashboard-student'); // Navega para o Dashboard
+            navigate('/dashboard-student');
         }
     };
 
     return (
-        <header className="bg-light py-3 mb-4">
-            <div className="container d-flex justify-content-between align-items-center">
-                <h2 className="mb-0">Bem-vindo, {userName || 'Usuário'}</h2>
-                <button className="btn btn-secondary" onClick={handleGoToDashboard}>
+        <header id="header-component">
+            <div className="header-container">
+                <h2>Bem-vindo, {userName || 'Usuário'}</h2>
+                <button className="header-button" onClick={handleGoToDashboard}>
                     Voltar ao Dashboard
                 </button>
             </div>

@@ -1,0 +1,190 @@
+/* dashboard.css */
+
+/* Estilos principais da página do dashboard */
+#dashboard-page {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #f8f9fa;
+}
+
+#dashboard-page h1 {
+    color: #343a40;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+/* Botões principais */
+#dashboard-page .dashboard-btn {
+    margin-bottom: 1rem;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Botão de desempenho (azul) */
+#dashboard-page .btn-performance {
+    background-color: #ff9d4f;
+    color: #fff;
+    margin: 3px;
+}
+
+#dashboard-page .btn-performance:hover {
+    background-color: #0056b3;
+}
+
+#dashboard-page .btn-performance:active {
+    background-color: #004085;
+}
+
+/* Botão de cadastro de perguntas (azul claro) */
+#dashboard-page .btn-manage-questions {
+    background-color: #ff9d4f;
+    color: #fff;
+    margin: 3px;
+}
+
+#dashboard-page .btn-manage-questions:hover {
+    background-color: #138496;
+}
+
+#dashboard-page .btn-manage-questions:active {
+    background-color: #0c5460;
+}
+
+/* Botão de cadastro de jogos (verde) */
+#dashboard-page .btn-create-game {
+    background-color: #ff9d4f;
+    color: #fff;
+    margin: 3px;
+}
+
+#dashboard-page .btn-create-game:hover {
+    background-color: #218838;
+}
+
+#dashboard-page .btn-create-game:active {
+    background-color: #1e7e34;
+}
+
+/* Botão de cadastro de alunos (amarelo) */
+#dashboard-page .btn-register-students {
+    background-color: #ff9d4f;
+    color: #fff;
+    margin: 3px;
+}
+
+#dashboard-page .btn-register-students:hover {
+    background-color: #e0a800;
+}
+
+#dashboard-page .btn-register-students:active {
+    background-color: #c69500;
+}
+
+/* Estilo para lista de jogos */
+#dashboard-page .games-list {
+    margin-top: 2rem;
+}
+
+#dashboard-page .games-list h3 {
+    font-size: 1.25rem;
+    color: #343a40;
+}
+
+#dashboard-page .game-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+}
+
+#dashboard-page .game-item a {
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+#dashboard-page .game-item a:hover {
+    text-decoration: underline;
+}
+
+#dashboard-page .game-item button {
+    background-color: #17a2b8;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+#dashboard-page .game-item button:hover {
+    background-color: #138496;
+}
+
+#dashboard-page .game-item button:active {
+    background-color: #0c5460;
+}
+
+/* Estilos para o modal */
+#dashboard-page .modal-content {
+    background-color: #fff;
+    border-radius: 0.25rem;
+    padding: 1.5rem;
+}
+
+#dashboard-page .modal-header {
+    border-bottom: 1px solid #ddd;
+}
+
+#dashboard-page .modal-title {
+    font-size: 1.5rem;
+    color: #343a40;
+}
+
+#dashboard-page .modal-body {
+    padding-top: 1rem;
+}
+
+#dashboard-page .modal-footer {
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+}
+
+#dashboard-page .modal-footer .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+#dashboard-page .modal-footer .btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+#dashboard-page .modal-footer .btn-secondary:active {
+    background-color: #4e555b;
+}
+
+/* Estilo das perguntas no modal */
+#dashboard-page .question-item {
+    margin-bottom: 1rem;
+}
+
+#dashboard-page .question-item ul {
+    margin-top: 0.5rem;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#dashboard-page .question-item li {
+    font-size: 1rem;
+}
+
+#dashboard-page .question-item .text-success {
+    color: #28a745;
+}

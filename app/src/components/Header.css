@@ -1,0 +1,43 @@
+/* header.css */
+
+#header-component {
+    background-color: #ff6f00; /* Fundo laranja vibrante */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+}
+
+#header-component h2 {
+    color: #fff; /* Texto branco para contraste */
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+#header-component .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+#header-component .header-button {
+    background-color: #ffffff; /* Botão branco */
+    color: #ff6f00; /* Texto laranja */
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#header-component .header-button:hover {
+    background-color: #f0f0f0; /* Fundo claro ao passar o mouse */
+}
+
+#header-component .header-button:active {
+    background-color: #e0e0e0; /* Fundo ainda mais claro ao clicar */
+}
