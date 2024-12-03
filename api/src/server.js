@@ -51,4 +51,3 @@ app.use('/api/performance', authenticate, performanceRoutes);
 app.use('/api/reports', authenticate, reportRoutes);
 app.use('/api/history', authenticate, historyRoutes);
 app.use('/api/progress', authenticate, progressRoutes);
-
