@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import LoginPage from '../pages/LoginPage';
 import DashboardPage from '../pages/DashboardPage';
 import QuizPage from '../pages/QuizPage';
@@ -11,11 +11,15 @@ import MedalsPage from '../pages/MedalsPage';
 import RegisterStudent from '../pages/RegisterStudent';
 import Header from '../components/Header';
 import DashboardStudentPage from "../pages/DashboardStudentPage";
+import {useLocation} from "react-use";
 
 const AppRoutes = () => {
+    const location = useLocation();
+    const hideHeader = location.pathname === '/';
+
     return (
         <Router>
-            <Header />
+            {!hideHeader && <Header />}
             <Routes>
                 <Route path="/" element={<LoginPage />} />
                 <Route path="/dashboard" element={<DashboardPage />} />
